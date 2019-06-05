@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   public mDisplayMode: Dspmode = Dspmode.Link; //show links to descriptions
 
   private mSearchField: FormControl;
-  private mForm: FormGroup;
+  public mForm: FormGroup;
 
   constructor(private network: NetworkService, private fb:FormBuilder) {
     /* Construct search form */

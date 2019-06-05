@@ -18,7 +18,7 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() {
     /* Get movie ID from current adress string */
-    this.mId = this.route.queryParams._value['id'];
+    this.mId = this.route.snapshot.queryParams.id;
     /* Get description from server side */
     this.network.getMovieById(this.mId).then(
       movie => {
