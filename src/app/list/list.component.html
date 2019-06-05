@@ -1,0 +1,12 @@
+<mat-card class='list'>
+  <div [className]="mCurrentClass">
+    <header *ngFor="let movie of movieList"
+      [mTitle] = movie.mTitle
+      [mYear] = movie.mYear
+      [mPoster] = movie.mPoster
+      [mImdbId] = movie.mImdbID
+      [mDisplayMode] = mDisplayMode
+      (Delete) = "clbOnDelete($event)"
+    ></header>
+  </div>
+</mat-card>

@@ -1,0 +1,36 @@
+.card {
+    max-width: 500px;
+    margin: auto;
+}
+
+.image {
+    width: 250px;
+}
+
+.image_container {
+    margin: 5px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.description_data {
+    margin: 5px;
+}
+.caption {
+    font-size: large;
+    font-weight: 500;
+}
+
+.value {
+    font-size: large;
+    font-weight: 300;
+}
+
+.content {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+}

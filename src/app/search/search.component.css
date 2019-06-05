@@ -1,0 +1,22 @@
+.card {
+    width: 750px;
+    margin: auto;
+}
+
+.searcher {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 98%;
+}
+
+.field {
+    flex-grow : 500;
+}
+
+.button {
+    margin-left: 3px;
+    margin-right: 3px;
+}

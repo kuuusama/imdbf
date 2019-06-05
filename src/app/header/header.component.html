@@ -1,0 +1,20 @@
+<mat-card class = "card mat-elevation-z4" *ngIf="1 == mDisplayMode; else linkMode">
+  <div class="card_content">
+    <mat-card-header>
+      <mat-card-title>{{mTitle}}</mat-card-title>
+      <mat-card-subtitle>{{mYear}}</mat-card-subtitle>
+    </mat-card-header>
+  </div>
+
+  <button mat-raised-button (click)="deleteFromList()" >Remove</button>
+  <a mat-raised-button color="primary" href="/movie?id={{mImdbId}}" >Description</a>
+
+
+</mat-card>
+<ng-template #linkMode>
+  <div class = "link">
+    <a href="/movie?id={{mImdbId}}" >
+      {{mTitle}} ({{mYear}})
+    </a>
+  </div>
+</ng-template>

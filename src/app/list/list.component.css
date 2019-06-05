@@ -1,0 +1,16 @@
+.list {
+    padding: 5px;
+    margin: 2px;
+    width: 98%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.simple {
+    display: block;
+}

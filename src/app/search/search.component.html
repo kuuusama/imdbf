@@ -1,0 +1,30 @@
+<mat-card class = "card mat-elevation-z4">
+  
+  <form [formGroup]="mForm">
+    <div class="searcher">
+      <mat-form-field class="field">
+        <input formControlName="search" matInput placeholder="Title" class="input"
+        [matAutocomplete] = "auto"
+        >
+        <mat-autocomplete #auto = "matAutocomplete">
+            <mat-option *ngFor = "let title of titles" [value] = "title.value">
+              {{title.display}}
+            </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <button mat-raised-button class="button" (click)="doSearch()" color="primary">Search</button>
+      <button mat-raised-button class="button" (click)="doReset()">Reset</button>
+    </div>
+  </form>
+  
+  <mat-checkbox [(ngModel)]="mOnTypeSearch">On-type search</mat-checkbox>
+
+  <div *ngIf="mResults">
+    <list 
+      [movieList] = mResults
+      [mDisplayMode] = mDisplayMode >
+    </list>
+  </div>
+
+</mat-card>

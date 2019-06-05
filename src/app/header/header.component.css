@@ -1,0 +1,27 @@
+.card {
+    margin: 2px;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.card_content {
+    height: 110px;
+}
+
+.link {
+    margin: 2px;
+    padding: 5px;
+    color: blue;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.image {
+    width: 180px;
+}
+
+.image_container {
+    margin: auto;
+}

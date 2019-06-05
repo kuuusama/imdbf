@@ -1,0 +1,12 @@
+<mat-card class = "card mat-elevation-z4">  
+  <div *ngIf="mMovies && 0 != mMovies.length">
+    <list 
+      [movieList] = mMovies
+      [mDisplayMode] = mDisplayMode
+      (Delete) = "clbOnDelete($event)" >
+    </list>
+  </div>
+  <div *ngIf="!mMovies || 0 == mMovies.length">
+    There is no movies in your list.
+  </div>
+  </mat-card>

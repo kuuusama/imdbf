@@ -1,0 +1,41 @@
+<mat-card class = "card mat-elevation-z4" *ngIf="mMovie">
+  <mat-card-header>
+    <mat-card-title>   {{mMovie.mTitle}}</mat-card-title>
+    <mat-card-subtitle>{{mMovie.mYear}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="description">
+      <div class="image_container">
+          <img src={{mMovie.mPoster}} class="image" alt="Poster">
+      </div>
+      
+      <div class="description_data">
+        <span class="caption">Rated:   </span><span class="value>"> {{mMovie.mRated}}</span><br>
+        <span class="caption">Released:</span><span class="value>"> {{mMovie.mReleased}}</span><br>
+        <span class="caption">Runtime: </span><span class="value>"> {{mMovie.mRuntime}}</span><br>
+        <span class="caption">Genre:   </span><span class="value>"> {{mMovie.mGenre}}ng</span><br>
+        <span class="caption">Director:</span><span class="value>"> {{mMovie.mDirector}}</span><br>
+        <span class="caption">Writer:  </span><span class="value>"> {{mMovie.mWriter}}</span><br>
+        <span class="caption">Actors:  </span><span class="value>"> {{mMovie.mActors}}</span><br>
+        <span class="caption">Language:</span><span class="value>"> {{mMovie.mLanguage}}</span><br>
+        <span class="caption">Country: </span><span class="value>"> {{mMovie.mCountry}}</span><br>
+        <span class="caption">Awards:  </span><span class="value>"> {{mMovie.mAwards}}</span><br>
+        <span class="caption">Metascore:    </span><span class="value>"> {{mMovie.mMetascore   }}</span><br>
+        <span class="caption">IMDB rating:  </span><span class="value>"> {{mMovie.mImdbRating  }}</span><br>
+        <span class="caption">IMDB votes:   </span><span class="value>"> {{mMovie.mImdbVotes   }}</span><br>
+        <span class="caption">Type:         </span><span class="value>"> {{mMovie.mType        }}</span><br>
+        <span class="caption">TotalSeasons: </span><span class="value>"> {{mMovie.mTotalSeasons}}</span>
+      </div>
+  </div>
+
+  <mat-card-content class="content">
+    <p>
+      {{mMovie.mPlot}}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addToList()" >Add to my list</button>
+  </mat-card-actions>
+
+</mat-card>
