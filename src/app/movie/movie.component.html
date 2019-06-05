@@ -1,14 +1,17 @@
 <mat-card class = "card mat-elevation-z4" *ngIf="mMovie">
   <mat-card-header>
+    <!-- Movie title and year -->
     <mat-card-title>   {{mMovie.mTitle}}</mat-card-title>
     <mat-card-subtitle>{{mMovie.mYear}}</mat-card-subtitle>
   </mat-card-header>
 
   <div class="description">
+      <!-- Poster -->
       <div class="image_container">
           <img src={{mMovie.mPoster}} class="image" alt="Poster">
       </div>
-      
+
+      <!-- Description -->
       <div class="description_data">
         <span class="caption">Rated:   </span><span class="value>"> {{mMovie.mRated}}</span><br>
         <span class="caption">Released:</span><span class="value>"> {{mMovie.mReleased}}</span><br>
@@ -28,6 +31,7 @@
       </div>
   </div>
 
+  <!-- Plot -->
   <mat-card-content class="content">
     <p>
       {{mMovie.mPlot}}
@@ -35,6 +39,7 @@
   </mat-card-content>
 
   <mat-card-actions>
+    <!-- Button to add to local list -->
     <button mat-raised-button color="primary" (click)="addToList()" >Add to my list</button>
   </mat-card-actions>
 

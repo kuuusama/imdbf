@@ -6,6 +6,7 @@
         <input formControlName="search" matInput placeholder="Title" class="input"
         [matAutocomplete] = "auto"
         >
+        <!-- Autocomplete element uses the same result array as main result list -->
         <mat-autocomplete #auto = "matAutocomplete">
             <mat-option *ngFor = "let title of mResults" [value] = "title.mTitle">
               {{title.mTitle}}
@@ -17,9 +18,11 @@
       <button mat-raised-button class="button" (click)="doReset()">Reset</button>
     </div>
   </form>
-  
-  <mat-checkbox [(ngModel)]="mOnTypeSearch">On-type search</mat-checkbox>
 
+  <!-- Select to do search while typing or not -->
+  <mat-checkbox [(ngModel)]="mOnTypeSearch">Search while type</mat-checkbox>
+
+  <!-- Show result list -->
   <div *ngIf="mResults">
     <list 
       [movieList] = mResults

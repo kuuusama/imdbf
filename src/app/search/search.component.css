@@ -12,6 +12,7 @@
     width: 98%;
 }
 
+/* Hack to make search field long */
 .field {
     flex-grow : 500;
 }

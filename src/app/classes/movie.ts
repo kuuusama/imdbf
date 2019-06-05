@@ -1,3 +1,4 @@
+/* Movie object class */
 import { Rating } from './rating';
 
 export class Movie {
@@ -23,6 +24,7 @@ export class Movie {
     mType         : string;
     mTotalSeasons : string;
 
+    /* Create object using json result object from server */
     constructor (jsonObject) {
         this.mTitle    = jsonObject.Title;
         this.mYear     = jsonObject.Year;
