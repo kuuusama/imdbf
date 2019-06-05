@@ -16,8 +16,6 @@ export class SearchComponent implements OnInit {
   public mOnTypeSearch: boolean = false;
   public mDisplayMode: Dspmode = Dspmode.Link;
 
-  public titles = [];
-
   private mSearchField: FormControl;
   private mForm: FormGroup;
 
@@ -45,7 +43,6 @@ export class SearchComponent implements OnInit {
   public doReset() {
     this.mSearchField.setValue('');
     this.mResults = null;
-    this.titles = null;
   }
 
   public doSearch() {
@@ -53,16 +50,6 @@ export class SearchComponent implements OnInit {
     this.network.searchByTitle(this.mSearchField.value).then(
       result => {
         this.mResults = result;
-        this.titles = [];
-        if (this.mOnTypeSearch) {
-          this.titles = this.mResults.map( function (title) {
-            return {
-              value: title.mTitle,
-              display: title.mTitle
-            };
-          });
-        }
-
       }
     )
     .catch(reason => {
