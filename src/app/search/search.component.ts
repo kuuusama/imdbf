@@ -43,6 +43,7 @@ export class SearchComponent implements OnInit {
   public doReset() {
     this.mSearchField.setValue('');
     this.mResults = null;
+    localStorage.removeItem('lastSearch');
   }
 
   public doSearch() {
