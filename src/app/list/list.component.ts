@@ -13,18 +13,11 @@ import { HeaderComponent } from '../header/header.component';
 export class ListComponent implements OnInit {
   @Input() movieList : Array<Movie>;
   @Input() mDisplayMode : Dspmode;
-  /* Event emitter to send movie delete event to parent component */
-  @Output() Delete: EventEmitter<string> = new EventEmitter();
 
   /* Set default display style */
   mCurrentClass: string = "simple";
 
   constructor() { }
-
-  public clbOnDelete(event) {
-    /* Send delete callback event to parent component */
-    this.Delete.emit(event);
-  }
 
   ngOnInit() {
     /* Select list style according to input option */

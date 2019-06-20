@@ -3,6 +3,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Dspmode } from '../classes/dspmode.enum';
 import { Movie } from '../classes/movie';
+import { StorageService } from '../storage.service';
+import { ClassField } from '@angular/compiler';
 
 @Component({
   selector: 'mylist',
@@ -14,22 +16,14 @@ export class MylistComponent implements OnInit {
   public mDisplayMode: Dspmode = Dspmode.Card; //Display list items as cards
   public mMovies: Array<Movie> = null; //User own movie array
 
-  constructor() { }
+  constructor(private storage: StorageService) { }
 
   ngOnInit() {
-    /* Read list from local storage as JSON string */
-    var itemListJson = localStorage.getItem('myList');
-    if (null != itemListJson) {
-      /* Restore list from JSON string */
-      this.mMovies = JSON.parse(itemListJson);
-    }
-  }
-
-  /* Delete movie object from local stored array */
-  public clbOnDelete($id) {
-    /* Remove movie from list */
-    this.mMovies = this.mMovies.filter(obj => obj.mImdbID !== $id);
-    /* Store updated list in local storage */
-    localStorage.setItem('myList', JSON.stringify(this.mMovies));
+    this.mMovies = this.storage.getMovieList();
+    var callback = function() {
+      this.mMovies = this.storage.getMovieList();
+    };
+    callback = callback.bind(this);
+    this.storage.subscribeToDeleteEvent(callback);
   }
 }

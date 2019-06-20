@@ -3,8 +3,7 @@
   <div *ngIf="mMovies && 0 != mMovies.length">
     <list 
       [movieList] = mMovies
-      [mDisplayMode] = mDisplayMode
-      (Delete) = "clbOnDelete($event)" >
+      [mDisplayMode] = mDisplayMode >
     </list>
   </div>
 

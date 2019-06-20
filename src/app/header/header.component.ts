@@ -2,6 +2,7 @@
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Dspmode } from '../classes/dspmode.enum';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'header',
@@ -14,17 +15,14 @@ export class HeaderComponent implements OnInit {
   @Input() mPoster : string;
   @Input() mImdbId : string;
   @Input() mDisplayMode : Dspmode;
-  @Output() Delete: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+  constructor(private stroage: StorageService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   /* Delete movie from user own list */
   public deleteFromList() {
-    /* Send delete event to parent component */
-    this.Delete.emit(this.mImdbId);
+    this.stroage.deleteMovie(this.mImdbId);
   }
 
 }
